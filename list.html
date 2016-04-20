@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head><title>List</title></head>
+    
+<body>
+    
+    <div id="story">
+    
+    </div>
+   <script>
+
+		// create an asynchronous GET request to the /read.php page
+		var xhr = new XMLHttpRequest();
+		xhr.open( 'GET', 'read.php' );
+		xhr.send();
+
+		// set up a event listner to check for status changes
+		xhr.onreadystatechange = function() {
+			// if everything worked out, then..
+			if( xhr.readyState == 4
+				&& xhr.status == 200 ) {
+
+				// process the response
+				processText( xhr.responseText );
+
+			}
+		}
+
+		// this function will
+		// process the response from read.php
+		// and create list items for each todo
+		function processText( txt ) {
+			// turn the text into an object
+			var obj = JSON.parse( txt );
+
+			// only if success
+			if( obj.message = 'success' ) {
+                 console.log("success");
+				// extract the 'data' from it
+				var data = obj.data;
+
+				// iterate over all the data
+				// to create list items
+				for( var i=0; i<data.length; i++ ) {
+					// console.log( data[i] );
+					
+					// create a new list item
+					var p= document.createElement('p');
+					// add a class
+					p.className = 'sent';
+					// add text to it
+					p.textContent = data[i].sent;
+					// add id to it
+					p.setAttribute( 'data-id', data[i].iid );
+					// make the content editable
+					p.setAttribute( 'contenteditable', true );
+                    
+					// add a delete button
+//					var btn = document.createElement('button');
+//					btn.textContent = 'X';
+//					btn.addEventListener( 'click', del );
+//					li.appendChild( btn );
+//					// add it to the unordered list
+					document.querySelector('#story').appendChild( p );
+
+				}
+                
+                       		function del( ev ) {
+			console.log( ev );
+		}
+			}
+            
+     
+
+		}
+
+
+	</script>    
+    
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>Story</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="clearfix">
+            <h2 id="title"> The Draft</h2>
+            <button type="button" id="popupActivator" class="btn btn-primary btn-default btn-lg" data-toggle="modal" data-target="#helpModal"> <span class="glyphicon glyphicon-question-sign"></span></button>
+        </nav>
+
+
+        <main class="clearfix col-md-12">
+
+            <div class="story col-md-6">
+
+
+                <div class="storyContent active"></div>
+
+            </div>
+
+
+        </main>
+
+        <div class="col-md-12 bottomNav flex">
+
+            <button type="button" id="back" class="btn btn-primary btn-default btn-lg"><span class="
+glyphicon glyphicon-arrow-left"></span></button>
+
+            <button type="button" id="draft" class="btn btn-primary btn-default btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span></button>
+
+            <button type="button" id="next" class="btn btn-primary btn-default btn-lg"><span class="
+glyphicon glyphicon-arrow-right"></span></button>
+        </div>
+
+
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">The Editor</h4></div>
+                    <div class="flex">
+                    </div>
+                    <div class="modal-body">
+
+                        <div id="editContainer">
+                            <div id="editor">
+
+                                <form>
+                                    <label for='sentence'>
+                                        <br/>
+                                        <textarea class="form-control" cols="54" rows="4" id="sentence" name="sentence" maxlength="250" autofocus></textarea>
+                                    </label>
+
+                                    <br/>
+
+                                    <div class="flex">
+
+
+                                        <div class="editorButtons">
+
+                                            <button class="btn btn-primary btn-default" id="save" type="button"><span class="glyphicon glyphicon-pencil"></span></button>
+
+                                            <button class="btn btn-primary btn-default" id="dump" type="button"><span class="glyphicon glyphicon-trash"></span></button>
+
+                                        </div>
+                                        <div id="textareafeedback"></div>
+
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="helpLabel">Instructions</h4>
+
+                </div>
+                <div class="modal-body">
+
+                    <ul>
+
+                        <li> Press the pencil open the editor to add a sentence</li>
+                        <li> Click on any previously entered submissions to edit them</li>
+                        <li> Press enter to save any edits </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+    <!--j query cdn-->
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <!--        bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!--    visibility.js-->
+    <script src="js/true-visibility-master/visibility.js"></script>
+    <!--    main.js frameworks/files-->
+    <script src="js/main.js"></script>
+    <script src="js/jquery.blast.min.js"></script>
+    <script src="js/velocity.min.js"></script>
+    <script src="js/velocity.ui.js"></script>
+</body>
+
+</html>
