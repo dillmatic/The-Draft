@@ -13,12 +13,12 @@ $(document).ready(function(){
 //asynchronously creating the database
 
 var create = new XMLHttpRequest();
-create.open('GET', 'create.php');
+create.open('GET', 'php/create.php');
 create.send();
 
 //asynchronously reading from the database
 var read = new XMLHttpRequest();
-read.open('GET', 'read.php');
+read.open('GET', 'php/read.php');
 read.send();
 
 //textarea variables
@@ -154,8 +154,6 @@ function makeNewPage(){
     
 }
 
-
-
 //Adding a title/chapter
 
 function makeTitle(data){
@@ -205,7 +203,7 @@ function makeTitle(data){
 
             var data = "id=" + idEncode + "&text=" + contentEncode;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'update.php');
+            xhr.open('POST', 'php/update.php');
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.send(data);
             return
@@ -274,7 +272,7 @@ function makeParagraph(data){
 
             var data = "id=" + id;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'delete.php')
+            xhr.open('POST', 'php/delete.php')
 
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
@@ -283,7 +281,7 @@ function makeParagraph(data){
             } else {
                 var data = "id=" + idEncode + "&text=" + content;
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'update.php');
+                xhr.open('POST', 'php/update.php');
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.send(data);
                 return
@@ -318,7 +316,7 @@ saveButton.addEventListener('click', function() {
         var data = "&text=" + uriSentence;
 
         var newPost = new XMLHttpRequest();
-        newPost.open('POST', 'new.php');
+        newPost.open('POST', 'php/new.php');
 
     // set the header type
         newPost.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');    
@@ -330,7 +328,7 @@ saveButton.addEventListener('click', function() {
             
             // Getting the new entry and appending it to the story div
             var post = new XMLHttpRequest();
-            post.open('GET', 'getlast.php');
+            post.open('GET', 'php/getlast.php');
             post.send();
 
             post.onreadystatechange = function () {
@@ -404,7 +402,7 @@ var story = document.querySelectorAll('.sent');
         var data = "id="+storyIdEncode;
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'delete.php')
+        xhr.open('POST', 'php/delete.php')
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.send(data);
 
